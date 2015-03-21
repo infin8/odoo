@@ -1,7 +1,7 @@
 openerp_announcement = function(instance) {
     instance.web.WebClient.include({
         show_application: function() {
-            return false;//$.when(this._super.apply(this, arguments)).then(this.proxy('show_annoucement_bar'));
+            return $.when(this._super.apply(this, arguments)); //.then(this.proxy('show_annoucement_bar'));
         },
         _ab_location: function(dbuuid) {
             return _.str.sprintf('https://services.openerp.com/openerp-enterprise/ab/css/%s.css', dbuuid);
